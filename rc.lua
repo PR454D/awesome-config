@@ -54,7 +54,7 @@ naughty.config.defaults.font = "FantasqueSansMono-Regular 10 "
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
-beautiful.init("~/.config/awesome/themes/prasad/theme.lua")
+beautiful.init("~/.config/awesome/themes/starry/theme.lua")
 beautiful.useless_gap = 5
 -- This is used later as the default terminal and editor to run.
 terminal = "kitty"
