@@ -12,7 +12,7 @@ cmdline wallpaper drawer utility
 audio utility (show in systray)
 ### amixer
 (found in 'alsa-utils' AUR) 
-playerctl
+### playerctl
 ### lxpolkit 
 for those who use pamac-gui
 ### doom emacs 
