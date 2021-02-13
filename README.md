@@ -1,13 +1,12 @@
 # awesome-config
+My personal awesome window manager config
+## Changelog
+I've just updated the main config and done some basic theming
+##dependancies
+```picom``` - compositor for transaprency and stuff
 
-hiya
-## subheader
-pls try this out at your own risk
-
-# dependancies
-picom - compositor for transaprency and stuff
-\n
-feh   - cmdline wallpaper drawer utility
-\n
-polybar- `I am not currently using awesome WMs' wibar as I don't know much lua`
-\n	This polybar is configured ny me just to be basic and minimal.. like network applet and volume icon
+feh - cmdline wallpaper drawer utility
+kmix - audio utility (show in systray)
+amixer(found in 'alsa-utils' AUR) & playerctl
+lxpolkit - for those who use pamac-gui
+doom emacs - if you dont want this just comment out the last line in rc.lua
