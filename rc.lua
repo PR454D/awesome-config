@@ -252,6 +252,11 @@ globalkeys = gears.table.join(
               myscreen.mywibox.visible = not myscreen.mywibox.visible
           end,
           {description = "toggle statusbar", group = "client"}),
+    awful.key({ altkey , "Shift" }, "e",
+          function ()
+          awful.util.spawn("emacsclient -c")
+	  end,
+          {description = "Launch Emacs client", group = "launcher"}),
 ---------------On the fly useless gaps change-----------------------------
     awful.key({ altkey, "Shift"  }, "Right", function () lain.util.useless_gaps_resize(5) end,
               {description = "increment useless gaps", group = "tag"}),
@@ -369,7 +374,7 @@ globalkeys = gears.table.join(
 
     -- Prompt
     
-    awful.key({ modkey },            "z",     function () awful.util.spawn("rofi -show run") end,
+    awful.key({ modkey },            "z",     function () awful.util.spawn("rofi -show drun") end,
               {description = "run prompt", group = "launcher"}),
 ------Default awesome run prompt-----------------
     --awful.key({ modkey },            "r",     function () awful.screen.focused().mypromptbox:run() end,
