@@ -46,9 +46,6 @@ do
 end
 -- }}}
 --
---Naughty presets
-naughty.config.defaults.gap = 8
-naughty.config.defaults.font = "FantasqueSansMono-Regular 10 "
 
 
 
@@ -70,22 +67,22 @@ modkey = "Mod4"
 altkey = "Mod1"
 -- Table of layouts to cover with awful.layout.inc, order matters.
 awful.layout.layouts = {
---  awful.layout.suit.floating,
+    --awful.layout.suit.floating,
     awful.layout.suit.tile,
-    awful.layout.suit.tile.left,
-    awful.layout.suit.tile.bottom,
-    awful.layout.suit.tile.top,
+    --awful.layout.suit.tile.left,
+    --awful.layout.suit.tile.bottom,
+    --awful.layout.suit.tile.top,
     --awful.layout.suit.fair,
-    --awful.layout.suit.fair.horizontal,
+    awful.layout.suit.fair.horizontal,
     awful.layout.suit.spiral,
     awful.layout.suit.spiral.dwindle,
-    awful.layout.suit.max,
+    --awful.layout.suit.max,
     --awful.layout.suit.max.fullscreen,
-    awful.layout.suit.magnifier,
+    --awful.layout.suit.magnifier,
     awful.layout.suit.corner.nw,
-    awful.layout.suit.corner.ne,
-    awful.layout.suit.corner.sw,
-    awful.layout.suit.corner.se,
+    --awful.layout.suit.corner.ne,
+    --awful.layout.suit.corner.sw,
+    --awful.layout.suit.corner.se,
 }
 -- }}}
 
@@ -139,29 +136,6 @@ local taglist_buttons = gears.table.join(
                     awful.button({ }, 4, function(t) awful.tag.viewnext(t.screen) end),
                     awful.button({ }, 5, function(t) awful.tag.viewprev(t.screen) end)
   )
-----status bars of running apps in current tag/workspace-----------------
---local tasklist_buttons = gears.table.join(
---                     awful.button({ }, 1, function (c)
---                                              if c == client.focus then
---                                                  c.minimized = true
---                                              else
---                                                  c:emit_signal(
---                                                      "request::activate",
---                                                      "tasklist",
---                                                      {raise = true}
---                                                  )
---                                              end
---                                         end),
---                     awful.button({ }, 3, function()
---                                              awful.menu.client_list({ theme = { width = 250 } })
---                                          end),
---                     awful.button({ }, 4, function ()
---                                              awful.client.focus.byidx(1)
---                                          end),
---                     awful.button({ }, 5, function ()
---                                              awful.client.focus.byidx(-1)
---                                          end))
----------------------------------------------------------------------------
 --
 --Wallpaper
 local function set_wallpaper(s)
@@ -184,7 +158,7 @@ awful.screen.connect_for_each_screen(function(s)
     set_wallpaper(s)
 
     -- Each screen has its own tag table.
-    awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9" }, s, awful.layout.layouts[1])
+    awful.tag({ "web", "(◕‿◕✿)", "git", "(~_~)", "console", "( uωu )", "gfx", "ʕ•ᴥ•ʔ", "teams" }, s, awful.layout.layouts[1])
 
     -- Create a promptbox for each screen
     s.mypromptbox = awful.widget.prompt()
@@ -228,7 +202,7 @@ awful.screen.connect_for_each_screen(function(s)
             mykeyboardlayout,
             wibox.widget.systray(),
             mytextclock,
-            s.mylayoutbox,
+	    s.mylayoutbox,
         },
     }
 end)
@@ -257,6 +231,19 @@ globalkeys = gears.table.join(
           awful.util.spawn("emacsclient -c")
 	  end,
           {description = "Launch Emacs client", group = "launcher"}),
+    awful.key({ altkey }, "f",
+          function ()
+          awful.util.spawn("dolphin --platformtheme qt5ct")
+	  end,
+          {description = "Launch Dolphin file manager", group = "launcher"}),
+	
+    awful.key({ altkey }, "b",
+          function ()
+          awful.util.spawn("firefox")
+	  end,
+          {description = "Launch Firefox", group = "launcher"}),
+
+
 ---------------On the fly useless gaps change-----------------------------
     awful.key({ altkey, "Shift"  }, "Right", function () lain.util.useless_gaps_resize(5) end,
               {description = "increment useless gaps", group = "tag"}),
@@ -649,5 +636,8 @@ awful.spawn.with_shell("kmix &")
 awful.spawn.with_shell("amixer &")
 awful.spawn.with_shell("playerctl &")
 awful.spawn.with_shell("lxpolkit &")
-awful.spawn.with_shell("setxbmap -option caps:escape &")
+--awful.spawn.with_shell("setxbmap -option caps:escape &")
 awful.spawn.with_shell("/usr/bin/emacs --daemon &")
+awful.spawn.with_shell("xautolock -time -locker -detectsleep -notify margin")
+awful.spawn("kdeconnect-indicator &")
+--'loginctl kill-user prasad'
