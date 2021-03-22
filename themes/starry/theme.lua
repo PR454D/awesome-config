@@ -1,7 +1,7 @@
 
 theme = {}
 
-theme.font          = "Comic Sans MS 10"
+theme.font          = "Fantasque Sans Mono 12"
 
 theme.bg_normal     = "#181818AA"
 theme.bg_focus      = "#000000"
