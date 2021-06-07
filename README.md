@@ -1,21 +1,25 @@
-# awesome-config
-My personal awesome window manager config
-## Changelog
-I've just updated the main config and done some basic theming
-## dependancies
+# Awesome Window manager config
 
-### picom  
-fork by jonaburg
-compositor for transaprency and stuff
-### feh 
-cmdline wallpaper drawer utility
-### kmix 
-audio utility (show in systray)
-### amixer
-(found in 'alsa-utils' AUR) 
-### playerctl
-### lxpolkit 
-for those who use pamac-gui or octopi
-### doom emacs 
-if you dont want this just comment out the last line in rc.lua
+## Screenshot ![alt text](screenshot.png "Starry theme")
+## Installation
+On Arch based systems
+`paru` is an AUR helper
+```bash
+paru -S awesome picom-jonaburg-git 
+mkdir ~/.config/awesome
+git clone https://gitlab.com/PR454D/awesome.conf.git ~/.config/awesome
+```
+Logout and log into Awesome window manager session and enjoy
+## Dependencies
+>rofi (launcher, although there is a builtin dmenu like launcher in keybinds)
+
+
+>feh (wallpaper utility)
+
+## Keybinds
+---
+ Modifier is <Super> key/ Windows key
+| Action       | Keybinds 
+| :---:        | :---:
+| rofi         | Mod+Z
 
